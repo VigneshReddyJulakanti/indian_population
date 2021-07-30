@@ -19,7 +19,7 @@ def convert_to_string_with_comma(ans):
 
 @app.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("home2.html")
 
 @app.route('/submitted',methods=['POST'])
 def submitted():
@@ -31,7 +31,7 @@ def submitted():
         
 
     
-        return render_template("home.html",ans=ans,year=year)
+        return render_template("home2.html",ans=f"The population of Indian in {year} is {ans}",year=year)
 
 
 
