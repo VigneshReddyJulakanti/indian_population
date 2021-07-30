@@ -31,7 +31,7 @@ def submitted():
         
 
     
-        return render_template("home2.html",ans=f"The population of Indian in {year} is {ans}",year=year)
+        return render_template("home2.html",ans=f"The population of India in {year} is {ans}",year=year)
 
 
 
