@@ -3,11 +3,11 @@ from flask import Flask,render_template,request
 import pickle
 
 app=Flask(__name__)
-
-model=pickle.load(open("model/pop.pkl",'rb'))
+ 
+model=pickle.load(open("model/pop.pkl",'rb')) 
 
 def convert_to_string_with_comma(ans):
-        ans=ans[0]
+        ans=int(ans[0])
         ans=str(ans)
         ans=ans[::-1]
         fans=""
@@ -25,6 +25,7 @@ def home():
 def submitted():
     if request.method=="POST":
         year=request.form["year"]
+        year=int(year)
         ans=model.predict([[year]])
 
         ans=convert_to_string_with_comma(ans)
