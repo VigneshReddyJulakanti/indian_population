@@ -7,7 +7,7 @@ app=Flask(__name__)
 model=pickle.load(open("model/pop.pkl",'rb'))
 
 def convert_to_string_with_comma(ans):
-        ans=int(ans[0])
+        ans=ans[0]
         ans=str(ans)
         ans=ans[::-1]
         fans=""
