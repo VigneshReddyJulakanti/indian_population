@@ -2,6 +2,8 @@ from flask import Flask,render_template,request
 
 import pickle
 
+#hosted at https://vignesh-ml-p1-indianmetrics.herokuapp.com/
+    
 app=Flask(__name__)
  
 model=pickle.load(open("model/pop.pkl",'rb')) 
@@ -17,11 +19,11 @@ def convert_to_string_with_comma(ans):
         fans=fans[1:]
         return fans
 
-@app.route('/')
+@app.route('/') 
 def home():
     return render_template("home2.html")
 
-@app.route('/submitted',methods=['POST'])
+@app.route('/submitted',methods=['POST']) 
 def submitted():
     if request.method=="POST":
         year=request.form["year"]
